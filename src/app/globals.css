@@ -88,6 +88,9 @@ input, button {
   padding: 8px;
 }
 
+li{
+  list-style: none;
+}
 
 footer {
   position: fixed;

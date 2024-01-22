@@ -2,7 +2,7 @@ import { sql } from '@vercel/postgres';
 
 async function crearTabla() {
     try {
-        const result = await sql`
+        const art = await sql`
         CREATE TABLE IF NOT EXISTS articulos (
             id SERIAL PRIMARY KEY,
             nombre TEXT NOT NULL,
@@ -11,7 +11,15 @@ async function crearTabla() {
             createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         );
         `;
-        console.log(result);
+        const pro = await sql`
+        CREATE TABLE IF NOT EXISTS proveedores (
+            id SERIAL PRIMARY KEY,
+            nombre TEXT NOT NULL,
+            telefono CHAR(9) NOT NULL,
+            createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        );
+        `;
+        console.log(art, pro);
     } catch (error) {
         console.log(error);
     }

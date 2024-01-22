@@ -1,4 +1,4 @@
-import Form from "@/components/Form"
+import Form from "@/components/FormArticulos"
 import { sql } from '@vercel/postgres';
 import { editArticulo } from "@/lib/actions"
 
